@@ -1,0 +1,51 @@
+# Claude
+CLAUDE.md
+ProjectTimeline.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# YOLO pretrained weights (auto-downloaded by ultralytics on first use)
+*.pt
+
+# Dataset — too large for git, sourced via Drive on Colab or unzipped locally
+data/sortwaste/sortwaste_raw/
+data/sortwaste/labels_4class/
+data/sortwaste/labels_8class/
+data/sortwaste/yolo_4class/
+data/sortwaste/yolo_8class/
+data/sortwaste/images/
+data/sortwaste/*.zip
+
+# Training & eval outputs (regenerable; large)
+runs/
+
+# EDA-generated artifacts (regenerable from notebooks)
+results/eda/
+results/annotations_*.csv
+
+# Keep verifier outputs (small, evidence of one-time data checks)
+!results/coco_yolo_diff_*.csv
+!results/derived_vs_released_4class.csv
+
+# Logs / scratch
+*.log
+/tmp/

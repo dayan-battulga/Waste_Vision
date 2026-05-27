@@ -1,0 +1,14 @@
+path: /Users/dayanbattulga/Desktop/personal-code/projects/waste_vision/data/sortwaste/yolo_8class
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: PET
+  1: HDPE
+  2: Mixed_Soft_Plastic
+  3: ECAL
+  4: Metal
+  5: Cardboard
+  6: Mixed_Rigid_Plastic
+  7: PET_Oil

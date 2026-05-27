@@ -1,0 +1,30 @@
+# Python 3.10 — install into the `waste_vision` conda env:
+#   conda activate waste_vision
+#   pip install -r requirements.txt
+#   python -m ipykernel install --user --name waste_vision --display-name "Python (waste_vision)"
+
+# Core training / inference
+ultralytics==8.3.*
+torch>=2.2
+torchvision>=0.17
+
+# Data + computer vision
+numpy>=1.26
+opencv-python>=4.9
+Pillow>=10.2
+pycocotools>=2.0.7
+
+# Analysis / plotting
+pandas>=2.1
+matplotlib>=3.8
+seaborn>=0.13
+scikit-learn>=1.4
+
+# Utilities
+tqdm>=4.66
+PyYAML>=6.0
+
+# Notebook / kernel
+jupyter>=1.0
+ipykernel>=6.29
+nbformat>=5.10
