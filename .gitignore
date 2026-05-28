@@ -1,5 +1,6 @@
 # Claude
 CLAUDE.md
+AGENTS.md
 ProjectTimeline.md
 
 # Python
@@ -37,6 +38,7 @@ data/sortwaste/*.zip
 
 # Training & eval outputs (regenerable; large)
 runs/
+*.tar.gz
 
 # EDA-generated artifacts (regenerable from notebooks)
 results/eda/
