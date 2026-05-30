@@ -1,13 +1,5 @@
-# SortWaste — YOLOv8 Reproduction
-
-A reproduction of Inácio, Proença, Neves (2026), *SortWaste: A Densely
-Annotated Dataset for Object Detection in Industrial Waste Sorting*
-(arXiv:2601.02299), substituting **YOLOv8m** for the paper's YOLOv11. On the
-4-class plastic split, this run reaches **overall AP50 0.753 vs the paper's
-0.753** and **AP 0.598 vs 0.597** — indistinguishable from the paper's
-YOLOv11 within run-to-run noise. Scope is the 4-class plastic benchmark only;
-the paper's 8-class benchmark and ClutterScore robustness analysis were not
-reproduced.
+# Waste_Vision — YOLOv8 Plastic Model Detection
+A YoloV8 Model fine-tuned for plastic detection and classification under a conveyer belt of foodwaste being wheeled in real-time. The mission is to eliminate plastic contamination and redirect compostable waste into composting facilities. 
 
 ## Headline result
 
@@ -72,19 +64,6 @@ Verify GPU/MPS is wired up before training:
 python -c "import torch; print('cuda', torch.cuda.is_available(), '/ mps', torch.backends.mps.is_available())"
 ```
 
-### Dataset
-
-SortWaste is not bundled with this repo (too large). Download `dataset.zip`
-and `plastic_dataset.zip` from `<DATASET SOURCE TBD>`, extract them under
-`data/sortwaste/sortwaste_raw/`, then materialize the training-ready trees:
-
-```bash
-python src/setup_yolo_trees.py
-```
-
-The script is idempotent — re-run it whenever `data/sortwaste/labels_<variant>/`
-changes. Layout details are in [CLAUDE.md](CLAUDE.md) under "Data layout — why two trees".
-
 ### Training (Colab recommended)
 
 GPU training of the full 300-epoch run is most practical on Colab — see
@@ -117,7 +96,3 @@ the success mode.
 > Inácio, S., Proença, H., Neves, J. C. *SortWaste: A Densely Annotated
 > Dataset for Object Detection in Industrial Waste Sorting.* arXiv:2601.02299,
 > January 2026.
-
-## License
-
-License: TBD
