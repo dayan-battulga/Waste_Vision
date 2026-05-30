@@ -3,13 +3,12 @@ A YoloV8 Model fine-tuned for plastic detection and classification under a conve
 
 ## Headline result
 
-| Metric            | YOLOv8m (this work) | YOLOv11 (paper Table 7) |
-|-------------------|---------------------|-------------------------|
-| Overall AP50      | 0.753               | 0.753                   |
-| Overall AP(50-95) | 0.598               | 0.597                   |
+| Metric            | YOLOv8m (this work) |
+|-------------------|---------------------|
+| Overall AP50      | 0.753               |
+| Overall AP(50-95) | 0.598               |
 
-Per-class AP50 ordering (PET > ECAL > HDPE > Mixed_Plastic) matches the paper
-exactly. See [results/RESULTS.md](results/RESULTS.md) for the per-class table,
+See [results/RESULTS.md](results/RESULTS.md) for the per-class table,
 the full LR/optimizer sweep, and caveats.
 
 ## Performance figures
@@ -20,13 +19,16 @@ All figures below are from the winning run
 `src/train.py` + `src/evaluate.py`); the copies in [docs/figures/](docs/figures/)
 are tracked so they render here.
 
+## Dataset
+
+SortWaste was used as the dataset to train the model, as it is the most identical and similar to the conditions Waste_Vision will be deployed on in the real-world. There is also explicit plastic labels (PET, HDPE, etc.) to classify different types of plastic, which is the main task of the model. The dataset was downloaded locally and uploaded to Google Drive to run the experiments on Colab.
+
 **Training curves (val mAP + losses across epochs)**
 
 ![training curves](docs/figures/training_curves.png)
 
 **Test-split precision-recall** (left) and **normalized confusion matrix**
-(right). PR curve overall mAP@0.5 = 0.753; PET is the easiest class, Mixed_Plastic
-the hardest — consistent with the paper.
+(right). PR curve overall mAP@0.5 = 0.753; PET is the easiest class, Mixed_Plastic is the hardest.
 
 | | |
 |---|---|
@@ -45,7 +47,6 @@ predictions (right) on the same test batch.
 - [configs/](configs/) — Ultralytics data YAMLs (4-class and 8-class)
 - [notebooks/](notebooks/) — EDA (`01_data_exploration.ipynb`) and Colab training driver (`02_colab_training.ipynb`)
 - [results/](results/) — eval CSVs, comparison tables, [RESULTS.md](results/RESULTS.md)
-- [CLAUDE.md](CLAUDE.md) — project context and full detail (read this first if you're working in the repo)
 - [ProjectTimeline.md](ProjectTimeline.md) — running decision log
 
 ## Reproducing this
