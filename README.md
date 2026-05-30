@@ -20,6 +20,33 @@ Per-class AP50 ordering (PET > ECAL > HDPE > Mixed_Plastic) matches the paper
 exactly. See [results/RESULTS.md](results/RESULTS.md) for the per-class table,
 the full LR/optimizer sweep, and caveats.
 
+## Performance figures
+
+All figures below are from the winning run
+(`yolov8m_4class_adamw_5e-04`). Source artifacts live under
+`runs/train/.../` and `runs/eval/train_test/` (gitignored — regenerable via
+`src/train.py` + `src/evaluate.py`); the copies in [docs/figures/](docs/figures/)
+are tracked so they render here.
+
+**Training curves (val mAP + losses across epochs)**
+
+![training curves](docs/figures/training_curves.png)
+
+**Test-split precision-recall** (left) and **normalized confusion matrix**
+(right). PR curve overall mAP@0.5 = 0.753; PET is the easiest class, Mixed_Plastic
+the hardest — consistent with the paper.
+
+| | |
+|---|---|
+| ![PR curve](docs/figures/test_pr_curve.png) | ![confusion matrix](docs/figures/test_confusion_matrix.png) |
+
+**Sample test-batch detections.** Ground-truth labels (left) and YOLOv8m
+predictions (right) on the same test batch.
+
+| Ground truth | Predictions |
+|---|---|
+| ![labels](docs/figures/test_batch_labels.jpg) | ![predictions](docs/figures/test_batch_predictions.jpg) |
+
 ## What's in the repo
 
 - [src/](src/) — training, eval, label verifiers, webcam demo
