@@ -47,7 +47,6 @@ predictions (right) on the same test batch.
 - [configs/](configs/) — Ultralytics data YAMLs (4-class and 8-class)
 - [notebooks/](notebooks/) — EDA (`01_data_exploration.ipynb`) and Colab training driver (`02_colab_training.ipynb`)
 - [results/](results/) — eval CSVs, comparison tables, [RESULTS.md](results/RESULTS.md)
-- [ProjectTimeline.md](ProjectTimeline.md) — running decision log
 
 ## Reproducing this
 
